@@ -3,7 +3,7 @@
   <h1 id="balance">${{ total }}</h1>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { useTransactionStore } from '../stores/TransactionStore'
 
 const transactionStore = useTransactionStore()

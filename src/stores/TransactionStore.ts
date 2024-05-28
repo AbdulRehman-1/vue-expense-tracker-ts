@@ -22,5 +22,21 @@ export const useTransactionStore = defineStore('transactionStore', () => {
     }, 0)
   })
 
-  return { transactions, total }
+  const income = computed(() => {
+    return transactions.value
+      .filter((transaction) => transaction.amount > 0)
+      .reduce((acc, transaction) => {
+        return acc + transaction.amount
+      }, 0)
+  })
+
+  const expense = computed(() => {
+    return transactions.value
+      .filter((transaction) => transaction.amount < 0)
+      .reduce((acc, transaction) => {
+        return acc + transaction.amount
+      }, 0)
+  })
+
+  return { transactions, total, income, expense }
 })

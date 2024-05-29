@@ -17,9 +17,9 @@
 </template>
 
 <script setup>
-import { useToast } from 'vue-toastification'
-import { useTransactionStore } from '@/stores/transactionStore'
+import { useTransactionStore } from '@/stores/TransactionStore'
 import { ref } from 'vue'
+import { useToast } from 'vue-toastification'
 
 const title = ref('')
 const amount = ref('')

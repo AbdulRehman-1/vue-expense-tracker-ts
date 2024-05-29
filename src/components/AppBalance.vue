@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import { useTransactionStore } from '../stores/TransactionStore'
+import { useTransactionStore } from '@/stores/TransactionStore'
 import { storeToRefs } from 'pinia'
 
 const transactionStore = useTransactionStore()

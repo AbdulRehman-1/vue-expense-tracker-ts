@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { useTransactionStore } from '../stores/TransactionStore'
+import { useTransactionStore } from '@/stores/TransactionStore'
 
 const transactionStore = useTransactionStore()
 const { transactions } = transactionStore

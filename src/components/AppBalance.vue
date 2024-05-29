@@ -5,7 +5,8 @@
 
 <script setup>
 import { useTransactionStore } from '../stores/TransactionStore'
+import { storeToRefs } from 'pinia'
 
 const transactionStore = useTransactionStore()
-const { total } = transactionStore
+const { total } = storeToRefs(transactionStore)
 </script>

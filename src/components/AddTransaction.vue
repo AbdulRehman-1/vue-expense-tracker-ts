@@ -17,15 +17,18 @@
 </template>
 
 <script setup>
+import { useToast } from 'vue-toastification'
 import { useTransactionStore } from '@/stores/transactionStore'
 import { ref } from 'vue'
 
 const title = ref('')
 const amount = ref('')
 
+const toast = useToast()
+
 const addTransaction = () => {
   if (!title.value || !amount.value) {
-    alert('Please enter both title and amount.')
+    toast.error('Both fields must be filled.')
     return
   }
   const transactionStore = useTransactionStore()

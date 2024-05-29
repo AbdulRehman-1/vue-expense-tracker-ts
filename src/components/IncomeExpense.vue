@@ -13,7 +13,8 @@
 
 <script setup>
 import { useTransactionStore } from '../stores/TransactionStore'
+import { storeToRefs } from 'pinia'
 
 const transactionStore = useTransactionStore()
-const { income, expense } = transactionStore
+const { income, expense } = storeToRefs(transactionStore)
 </script>

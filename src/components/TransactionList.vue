@@ -6,7 +6,7 @@
       :class="transaction.amount > 0 ? 'plus' : 'minus'"
     >
       {{ transaction.title }} <span>${{ transaction.amount }}</span
-      ><button class="delete-btn">x</button>
+      ><button class="delete-btn" @click="deleteTransaction(transaction.id)">x</button>
     </li>
   </ul>
 </template>
@@ -16,4 +16,8 @@ import { useTransactionStore } from '../stores/TransactionStore'
 
 const transactionStore = useTransactionStore()
 const { transactions } = transactionStore
+
+const deleteTransaction = (id) => {
+  transactionStore.deleteTransaction(id)
+}
 </script>

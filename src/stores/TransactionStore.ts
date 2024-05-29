@@ -38,5 +38,13 @@ export const useTransactionStore = defineStore('transactionStore', () => {
       }, 0)
   })
 
-  return { transactions, total, income, expense }
+  const addTransaction = (title: string, amount: number) => {
+    transactions.value.push({
+      id: transactions.value.length + 1,
+      title: title,
+      amount: amount
+    })
+  }
+
+  return { transactions, total, income, expense, addTransaction }
 })

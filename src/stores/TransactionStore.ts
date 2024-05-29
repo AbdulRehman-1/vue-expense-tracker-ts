@@ -1,9 +1,17 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import type { Transaction } from '../types/transactionTypes'
 
 export const useTransactionStore = defineStore('transactionStore', () => {
-  const transactions = ref<Transaction[]>([])
+  const transactions = ref<Transaction[]>(JSON.parse(localStorage.getItem('transactions') || '[]'))
+
+  watch(
+    transactions,
+    (newTransactions) => {
+      localStorage.setItem('transactions', JSON.stringify(newTransactions))
+    },
+    { deep: true }
+  )
 
   const total = computed(() => {
     return transactions.value.reduce((acc, transaction) => {

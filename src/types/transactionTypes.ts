@@ -1,9 +1,19 @@
+/**
+ * Represents a transaction.
+ */
 export interface Transaction {
-  id: number
-  title: string
-  amount: number
-}
+  /**
+   * Unique identifier for the transaction
+   */
+  readonly id: number
 
-export interface Total {
-  totalAmount: number
+  /**
+   * Title or description of the transaction
+   */
+  readonly title: string
+
+  /**
+   * Amount of the transaction
+   */
+  readonly amount: number
 }

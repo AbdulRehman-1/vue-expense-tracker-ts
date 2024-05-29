@@ -26,6 +26,13 @@ const amount = ref('')
 
 const toast = useToast()
 
+/**
+ * Adds a new transaction to the transaction store if the title and amount fields are filled.
+ * Displays an error toast message if either field is empty.
+ * Clears the title and amount fields after adding the transaction.
+ *
+ * @return {void}
+ */
 const addTransaction = () => {
   if (!title.value || !amount.value) {
     toast.error('Both fields must be filled.')

@@ -17,6 +17,12 @@ import { useTransactionStore } from '../stores/TransactionStore'
 const transactionStore = useTransactionStore()
 const { transactions } = transactionStore
 
+/**
+ * Deletes a transaction with the specified ID.
+ *
+ * @param {number} id - The ID of the transaction to be deleted.
+ * @return {void} This function does not return a value.
+ */
 const deleteTransaction = (id) => {
   transactionStore.deleteTransaction(id)
 }
